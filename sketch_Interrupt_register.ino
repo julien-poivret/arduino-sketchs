@@ -55,21 +55,24 @@ physical adress       data        value
             0x6       00000000
 
 
-c/c++ register definition and manipulation:
+c/c++ Hardware physical register definition and manipulation:
 
 -------------------------------------------------------------
 code:
 volatile uint8_t* pointer_register = (volatile uint8_t*) 0x3;
 -------------------------------------------------------------
 
-        if you extract the value at 0x3 register on ram you get 0x72  -> ( 114 in decimal )"
+    if you extract the value at 0x3 (physical adress register on ram)  
+    you get he value 0x72 -> ( 114 in decimal )"
 
 -------------------------------------------------------------
 code:
 Serial.println(*pointer_register,DEC); 
 -------------------------------------------------------------
 
-        you get 114 on Serial ---> from *pointer_register (classic c variable from pointer adress)
+        you get the value 114 printed on Serial
+        from            *pointer_register 
+   ( classic c variable value from c/c++ pointer adress )
 
 */
 
