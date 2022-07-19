@@ -1,5 +1,6 @@
 /* 
-///////////////////////////////////////////////////////////////////////////////////////////
+                                Technical explanation:
+
 Info primary Block (of 4 bits):
 
       Dec        Bin          Hex
@@ -25,7 +26,7 @@ Info primary Block (of 4 bits):
 
     And so... with Hexadecimal you can handle 8bits value in a more human "freindly way"....
     that why memory is often writed in hexadecimal rather than binary 0x3D vs B111101
-    specially on 32 or 64bits registers...
+    speciallly on 32 or 64bits registers...
     4 bits  -> 0xF
     8 bits  -> 0xFF
     16 bits -> 0xFFFF
@@ -38,25 +39,58 @@ Info primary Block (of 4 bits):
     By the way the human can create smarter machine than himself 
     but does machines can create humans smarter than machine too ? 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+---------------------------------------------------------------------------------------
+                     
+                     The 8 bits "on chip" REGISTER mystery.
+
+exemple of 8 bits RAM memory on microcontroler or 8 bits computer:
+
+physical adress       data        value
+            0x0       00000000
+            0x1       00000000
+            0x2       00000000
+            0x3       01110010 --> 0x72
+            0x4       00000000
+            0x5       00000000
+            0x6       00000000
+
+
+c/c++ register definition and manipulation:
+
+-------------------------------------------------------------
+code:
+volatile uint8_t* pointer_register = (volatile uint8_t*) 0x3;
+-------------------------------------------------------------
+
+        if you extract the value at 0x3 register on ram you get 0x72  -> ( 114 in decimal )"
+
+-------------------------------------------------------------
+code:
+Serial.println(*pointer_register,DEC); 
+-------------------------------------------------------------
+
+        you get 114 on Serial ---> from *pointer_register (classic c variable from pointer adress)
+
 */
 
+
 /* 
+   Start of the arduino code. 
    Setting the 8bits register of the chip ATMEGA328P U (Arduino Uno)
    for interrupt on INT0 (PD2).
 */
 
-//Output pin D
+//Output pin D physical adress definition
 volatile uint8_t* _PIND = (volatile uint8_t*) 0x29;// pin status and config
 volatile uint8_t* _DDRD = (volatile uint8_t*) 0x2A;// port direction
 volatile uint8_t* _PORTD = (volatile uint8_t*) 0x2B;// pin set or reset
 
-//Output pin B
+//Output pin B physical adress definition
 volatile uint8_t* _PINB = (volatile uint8_t*) 0x23;// pin status and config
 volatile uint8_t* _DDRB = (volatile uint8_t*) 0x24;// port direction
 volatile uint8_t* _PORTB = (volatile uint8_t*) 0x25;// pin set or reset
 
-//Interrupt REGISTER settings
+//Interrupt REGISTER settings physical adress definition
 volatile uint8_t* _SREG = (volatile uint8_t*) 0x5F;  // Global interupt
 volatile uint8_t* _EICRA = (volatile uint8_t*) 0x69; // Raising or Falling edge or other
 volatile uint8_t* _EIMSK = (volatile uint8_t*) 0x3D; // int0 or int1
