@@ -14,7 +14,7 @@ volatile uint8_t* _PORTB = (volatile uint8_t*) 0x25;// pin set or reset
 
 //Interrupt REGISTER settings
 volatile uint8_t* _SREG = (volatile uint8_t*) 0x5F;  // Global interupt
-volatile uint8_t* _EICRA = (volatile uint8_t*) 0x69; // Raising or Fallin edge or other
+volatile uint8_t* _EICRA = (volatile uint8_t*) 0x69; // Raising or Falling edge or other
 volatile uint8_t* _EIMSK = (volatile uint8_t*) 0x3D; // int0 or int1
 
 volatile uint8_t flag = 0;
