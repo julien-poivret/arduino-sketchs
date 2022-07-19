@@ -72,7 +72,7 @@ Serial.println(*pointer_register,DEC);
 
         you get the value 114 printed on Serial
         from            *pointer_register 
-   ( classic c variable value from c/c++ pointer adress )
+   ( classic variable value from c/c++ pointer adress )
 
 */
 
