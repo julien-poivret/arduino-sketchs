@@ -24,9 +24,9 @@ Info primary Block (of 4 bits):
   then you can conbine two blocks...
     8 bits value  -->   0x3D ---> (11+1101) ---> 111101 
 
-    And so... with Hexadecimal you can handle 8bits value in a more human "freindly way"....
-    that why memory is often writed in hexadecimal rather than binary 0x3D vs B111101
-    speciallly on 32 or 64bits registers...
+    And so... with Hexadecimal you can handle 8bits value in a more human "friendly way"....
+    that why memory is often wrote in hexadecimal rather than binary 0x3D vs B111101
+    specially on 32 or 64bits registers...
     4 bits  -> 0xF
     8 bits  -> 0xFF
     16 bits -> 0xFFFF
@@ -37,7 +37,7 @@ Info primary Block (of 4 bits):
     crazy... but not for computers... and that's computing !
     
     By the way the human can create smarter machine than himself 
-    but does machines can create humans smarter than machine too ? 
+    but can machines create humans smarter than machine too ? 
 
 ---------------------------------------------------------------------------------------
                      
@@ -79,7 +79,7 @@ Serial.println(*pointer_register,DEC);
 
 /* 
    Start of the arduino code. 
-   Setting the 8bits register of the chip ATMEGA328P U (Arduino Uno)
+   Setting the 8 bits register of the chip ATMEGA328P U (Arduino Uno)
    for interrupt on INT0 (PD2).
 */
 
