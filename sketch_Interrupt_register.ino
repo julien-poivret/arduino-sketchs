@@ -25,7 +25,7 @@ Info primary Block (of 4 bits):
     8 bits value  -->   0x3D ---> (11+1101) ---> 111101 
 
     And so... with Hexadecimal you can handle 8bits value in a more human "friendly way"....
-    that why memory is often wrote in hexadecimal rather than binary 0x3D vs B111101
+    that why memory is often written in hexadecimal rather than binary 0x3D vs B111101
     specially on 32 or 64bits registers...
     4 bits  -> 0xF
     8 bits  -> 0xFF
